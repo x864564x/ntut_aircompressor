@@ -6,7 +6,6 @@ function getRandom(min, max) {
 }
 /* GET home page. */
 router.get('/', function (req, res) {
-  const error_code = ''; //錯誤碼
   const temperature = getRandom(34, 37);
   const pressure = getRandom(700, 800); //壓力 -
   const electric_c = getRandom(60, 70); //電流
@@ -15,9 +14,9 @@ router.get('/', function (req, res) {
   const power = getRandom(30, 34);
   const operation_time = getRandom(1, 50);
 
-  res.send({
+  res.status(200).send({
     status: true,
-    error_code: error_code,
+    error_code: "",
     temperature: temperature,
     pressure: pressure,
     voltage: 340,

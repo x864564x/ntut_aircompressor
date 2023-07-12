@@ -11,9 +11,8 @@ const corsOptions = {
 };
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var app = express();
-
+app.set('json spaces', 2)
 app.use(cors(corsOptions));
 
 app.use(logger('dev'));
@@ -24,6 +23,5 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 module.exports = app;
